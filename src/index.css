@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/* Theme Definitions using CSS Variables */
+:root,
+html.dark,
+[data-theme="dark"] {
+  --color-page-bg: #0A0F1D;
+  --color-surface-card: #0F172A;
+  --color-surface-subtle: #080D1A;
+  --color-header-bg: rgba(10, 15, 29, 0.92);
+  --color-footer-bg: #070B16;
+  --color-border-subtle: #1E293B;
+  --color-border-strong: #334155;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+  --color-accent: #00A3FF;
+  --color-accent-hover: #38BDF8;
+  --color-accent-glow: rgba(0, 163, 255, 0.15);
+  --color-badge-bg: rgba(8, 47, 73, 0.6);
+  --color-badge-border: rgba(14, 165, 233, 0.3);
+  --color-badge-text: #38BDF8;
+  --theme-brightness: 1;
+}
+
+html.light,
+[data-theme="light"] {
+  --color-page-bg: #F4F6F9;
+  --color-surface-card: #FFFFFF;
+  --color-surface-subtle: #E2E8F0;
+  --color-header-bg: rgba(255, 255, 255, 0.94);
+  --color-footer-bg: #EAEFF5;
+  --color-border-subtle: #CBD5E1;
+  --color-border-strong: #94A3B8;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-accent: #0284C7;
+  --color-accent-hover: #0369A1;
+  --color-accent-glow: rgba(2, 132, 199, 0.12);
+  --color-badge-bg: #E0F2FE;
+  --color-badge-border: #7DD3FC;
+  --color-badge-text: #0369A1;
+  --theme-brightness: 0.98;
+}
+
+html.psas-official,
+[data-theme="psas_official"] {
+  /* PSAS Official Polytechnic Corporate Palette: Navy Blue (#0C2340), Gold (#E5A823 / #F59E0B), Crimson (#991B1B) */
+  --color-page-bg: #071526;
+  --color-surface-card: #0C2340;
+  --color-surface-subtle: #050E1A;
+  --color-header-bg: rgba(12, 35, 64, 0.95);
+  --color-footer-bg: #050E1A;
+  --color-border-subtle: #1A365D;
+  --color-border-strong: #2B4C7E;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-accent: #E5A823;
+  --color-accent-hover: #FBBF24;
+  --color-accent-glow: rgba(229, 168, 35, 0.2);
+  --color-badge-bg: rgba(120, 53, 15, 0.4);
+  --color-badge-border: rgba(245, 158, 11, 0.4);
+  --color-badge-text: #FDE68A;
+  --theme-brightness: 1;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--color-page-bg);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Dynamic styling adapters for Light Theme */
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] .bg-\[\#0A0F1D\],
+[data-theme="light"] .bg-\[\#0A0F1D\]\/95,
+[data-theme="light"] .bg-\[\#0A0F1D\]\/90 {
+  background-color: var(--color-page-bg) !important;
+  color: var(--color-text-primary);
+}
+
+[data-theme="light"] .bg-\[\#070B16\],
+[data-theme="light"] .bg-\[\#070D1B\],
+[data-theme="light"] .bg-\[\#0E1628\],
+[data-theme="light"] .bg-\[\#0B1120\],
+[data-theme="light"] .bg-\[\#0C152E\] {
+  background-color: var(--color-surface-card) !important;
+}
+
+[data-theme="light"] .bg-slate-900,
+[data-theme="light"] .bg-slate-900\/80,
+[data-theme="light"] .bg-slate-900\/70,
+[data-theme="light"] .bg-slate-900\/60,
+[data-theme="light"] .bg-slate-900\/90,
+[data-theme="light"] .bg-slate-950,
+[data-theme="light"] .bg-slate-950\/60,
+[data-theme="light"] .bg-slate-950\/70,
+[data-theme="light"] .bg-slate-950\/80,
+[data-theme="light"] .bg-slate-950\/90 {
+  background-color: #FFFFFF !important;
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .border-slate-800,
+[data-theme="light"] .border-slate-800\/80,
+[data-theme="light"] .border-slate-800\/90,
+[data-theme="light"] .border-slate-700,
+[data-theme="light"] .border-slate-850 {
+  border-color: #E2E8F0 !important;
+}
+
+[data-theme="light"] .text-white {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .text-slate-100 {
+  color: #1E293B !important;
+}
+
+[data-theme="light"] .text-slate-200,
+[data-theme="light"] .text-slate-300 {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .text-slate-400 {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .text-slate-500 {
+  color: #64748B !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Dynamic styling adapters for PSAS Official Theme (Dark Royal Navy & Academic Gold) */
+[data-theme="psas_official"] {
+  color-scheme: dark;
+}
+
+[data-theme="psas_official"] .bg-\[\#0A0F1D\],
+[data-theme="psas_official"] .bg-\[\#0A0F1D\]\/95,
+[data-theme="psas_official"] .bg-\[\#0A0F1D\]\/90 {
+  background-color: var(--color-page-bg) !important;
+}
+
+[data-theme="psas_official"] .bg-\[\#070B16\],
+[data-theme="psas_official"] .bg-\[\#070D1B\],
+[data-theme="psas_official"] .bg-\[\#0E1628\],
+[data-theme="psas_official"] .bg-\[\#0B1120\] {
+  background-color: var(--color-surface-card) !important;
+}
+
+[data-theme="psas_official"] .bg-slate-900,
+[data-theme="psas_official"] .bg-slate-900\/80,
+[data-theme="psas_official"] .bg-slate-900\/70,
+[data-theme="psas_official"] .bg-slate-900\/60,
+[data-theme="psas_official"] .bg-slate-900\/90 {
+  background-color: #0C2340 !important;
+}
+
+[data-theme="psas_official"] .bg-slate-950,
+[data-theme="psas_official"] .bg-slate-950\/60,
+[data-theme="psas_official"] .bg-slate-950\/70,
+[data-theme="psas_official"] .bg-slate-950\/80,
+[data-theme="psas_official"] .bg-slate-950\/90 {
+  background-color: #07182E !important;
+}
+
+[data-theme="psas_official"] .border-slate-800,
+[data-theme="psas_official"] .border-slate-800\/80,
+[data-theme="psas_official"] .border-slate-800\/90,
+[data-theme="psas_official"] .border-slate-700 {
+  border-color: #1A365D !important;
+}
+
+[data-theme="psas_official"] .border-cyan-500\/20,
+[data-theme="psas_official"] .border-cyan-500\/30,
+[data-theme="psas_official"] .border-cyan-500\/40 {
+  border-color: rgba(229, 168, 35, 0.4) !important;
+}
+
+[data-theme="psas_official"] .text-cyan-400,
+[data-theme="psas_official"] .text-cyan-300 {
+  color: #FBBF24 !important;
+}
+
+[data-theme="psas_official"] .bg-cyan-600 {
+  background-color: #D97706 !important;
+}
+
+[data-theme="psas_official"] .bg-cyan-600:hover {
+  background-color: #B45309 !important;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-page-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}

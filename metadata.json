@@ -1,0 +1,6 @@
+{
+  "name": "Campus Corner: An Integrated Student Marketplace and Services Platform",
+  "description": "Comprehensive student marketplace, accommodation hub, peer tutoring, campus utilities, and student entrepreneurship platform for Politeknik Sultan Azlan Shah (PSAS).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
